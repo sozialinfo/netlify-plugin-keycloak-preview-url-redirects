@@ -1,5 +1,5 @@
 {
-  "name": "netlify-plugin-keycloak-preview-url-redirects",
+  "name": "@sozialinfo/netlify-plugin-keycloak-preview-url-redirects",
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@10.15.1",
