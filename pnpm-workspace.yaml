@@ -1,0 +1,5 @@
+onlyBuiltDependencies:
+  - '@netlify/esbuild'
+  - esbuild
+  - netlify-cli
+  - unix-dgram

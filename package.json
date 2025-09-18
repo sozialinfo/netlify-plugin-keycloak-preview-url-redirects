@@ -1,59 +1,47 @@
 {
   "name": "netlify-plugin-keycloak-preview-url-redirects",
-  "version": "0.0.1",
-  "description": "Netlify Build plugin - Example description",
   "type": "module",
-  "exports": "./src/index.js",
-  "main": "./src/index.js",
-  "files": [
-    "src/**/*.js",
-    "src/**/*.json",
-    "src/**/*.sh",
-    "src/**/*.html",
-    "src/**/*.ejs",
-    "manifest.yml"
-  ],
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.15.1",
+  "description": "Netlify Build plugin - Keycloak Preview URL Redirects",
+  "license": "MIT",
+  "repository": "sozialinfo/netlify-plugin-keycloak-preview-url-redirects",
   "keywords": [
     "netlify-plugin",
     "netlify"
   ],
-  "author": "Stephan Simonett <wireless25@me.com>",
-  "license": "MIT",
-  "repository": "sozialinfo/netlify-plugin-keycloak-preview-url-redirects",
+  "exports": "./src/index.js",
+  "main": "./src/index.js",
+  "files": [
+    "manifest.yml",
+    "src/**/*.js"
+  ],
   "directories": {
     "lib": "src",
     "test": "test"
   },
   "engines": {
-    "node": "^14.14.0 || >=16.0.0"
-  },
-  "ava": {
-    "verbose": true,
-    "timeout": "100s",
-    "environmentVariables": {
-      "FORCE_COLOR": "1"
-    }
+    "node": "^20.19.3",
+    "pnpm": "10.15.1"
   },
   "scripts": {
     "build": "netlify-build",
-    "test": "npm run lint && npm run ava",
-    "lint": "npm run eslint && npm run prettier",
-    "eslint": "eslint --ignore-path .gitignore --fix --cache --format=codeframe --max-warnings=0 \"{src,init}/**/*.{cjs,mjs,js}\"",
-    "prettier": "prettier --ignore-path .gitignore --write --loglevel warn \"{.github,src,init}/**/*.{cjs,mjs,js,md,yml,json}\" \"*.{cjs,mjs,js,md,yml,json}\"",
-    "ava": "cross-env FORCE_COLOR=1 ava --verbose",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run",
     "release": "release-it"
   },
+  "dependencies": {
+    "@keycloak/keycloak-admin-client": "^26.3.4"
+  },
   "devDependencies": {
-    "@netlify/build": "^26.5.3",
-    "ava": "^4.0.0",
-    "cross-env": "^7.0.2",
-    "eslint": "^7.10.0",
-    "eslint-config-prettier": "^8.0.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "execa": "^6.0.0",
-    "netlify-cli": "^9.16.2",
-    "prettier": "^2.1.2",
-    "release-it": "^15.0.0"
+    "@antfu/eslint-config": "^5.3.0",
+    "@netlify/build": "^35.1.6",
+    "ava": "^4.3.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.35.0",
+    "netlify-cli": "^23.5.1",
+    "release-it": "^15.11.0",
+    "vitest": "^3.2.4"
   }
 }
