@@ -2,10 +2,14 @@
   "name": "@sozialinfo/netlify-plugin-keycloak-preview-url-redirects",
   "type": "module",
   "version": "0.1.0",
+  "private": false,
   "packageManager": "pnpm@10.15.1",
   "description": "Netlify Build plugin - Keycloak Preview URL Redirects",
   "license": "MIT",
-  "repository": "sozialinfo/netlify-plugin-keycloak-preview-url-redirects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sozialinfo/netlify-plugin-keycloak-preview-url-redirects.git"
+  },
   "keywords": [
     "netlify-plugin",
     "netlify"
